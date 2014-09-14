@@ -13,8 +13,17 @@ BEGIN {
 	printf("<tt>%s</tt><br/>\n", post["date"])
 	printf("%s\n", post["body"])
 
-	if (post["tags"] != "untagged")
-		printf("<tt>tags: %s</tt>\n", post["tags"])
+
+	if (post["tags"][0] != "untagged") {
+		printf("<tt>tags: ")
+		for (i in post["tags"]) {
+			tag = post["tags"][i]
+			if (i > 1)
+				printf(",")
+			printf("<a href=\"../tags/%s\">%s</a>", tag, tag)
+		}
+		printf("</tt>\n")
+	}
 
 	print page_footer
 }

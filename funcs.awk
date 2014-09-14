@@ -17,7 +17,8 @@ function read_file(filename) {
 
 function parse_post(filename, info) {
 
-	info["tags"] = "untagged"
+	delete info
+	info["tags"][0] = "untagged"
 
 	while(getline < filename && $0 != "--- body ---") {
 
@@ -27,8 +28,9 @@ function parse_post(filename, info) {
 		else if ($1 == "date:")
 			info["date"] = substr($0, 7)
 
-		else if ($1 == "tags:")
-			info["tags"] = substr($0, 7)
+		else if ($1 == "tags:") {
+			patsplit(substr($0, 7), info["tags"], "([^, ]+[^,]+[^, ]+)")
+		}
 	}
 
 	info["body"] = read_file(filename)

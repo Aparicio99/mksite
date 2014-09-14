@@ -6,11 +6,14 @@ $0 == "--- header ---" {
 
 	parse_post(FILENAME, post)
 
-	tags[post["tags"]] += 1
+	for (i in post["tags"]) {
+		tag = post["tags"][i]
+		tags[tag] += 1
 
-	url = strip_post_filename(FILENAME)
-	posts[post["tags"]][FILENAME] = sprintf("<tt>%s</tt> - <a href=\"../posts/%s\">%s</a><br/>",
-			post["date"], url ENVIRON["EXT"], post["title"])
+		url = strip_post_filename(FILENAME)
+		posts[tag][FILENAME] = sprintf("<tt>%s</tt> - <a href=\"../posts/%s\">%s</a><br/>",
+				post["date"], url ENVIRON["EXT"], post["title"])
+	}
 }
 
 END {
