@@ -31,7 +31,7 @@ IMAGES    = $(addprefix $(SITE)/images/, $(notdir $(wildcard $(TEMPLATE)/images/
 # Function to reverse a list
 reverse = $(if $(1),$(call reverse,$(wordlist 2,$(words $(1)),$(1)))) $(firstword $(1))
 
-export HEADER FOOTER TAGS EXT
+export STMD HEADER FOOTER TAGS EXT
 
 all: $(INDEX) $(SITE_HTML) $(ARCHIVE) $(TAGS) $(CSS) $(IMAGES)
 
@@ -59,7 +59,7 @@ $(SITE)/posts/%.html: $(TMP_HTML)/%.html
 
 $(TMP_HTML)/%.html: $(POSTS)/%.markdown
 	@mkdir -p $(TMP_HTML)
-	./parse_markdown.awk $(STMD) $+ > $@
+	./parse_markdown.awk $+ > $@
 
 clean:
 	rm -rf $(SITE)/*
