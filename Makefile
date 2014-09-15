@@ -31,9 +31,9 @@ IMAGES    = $(addprefix $(SITE)/images/, $(notdir $(wildcard $(TEMPLATE)/images/
 # Function to reverse a list
 reverse = $(if $(1),$(call reverse,$(wordlist 2,$(words $(1)),$(1)))) $(firstword $(1))
 
-export TAGS EXT HEADER FOOTER
+export HEADER FOOTER TAGS EXT
 
-all: $(CSS) $(IMAGES) $(SITE_HTML) $(INDEX) $(ARCHIVE) $(TAGS)
+all: $(INDEX) $(SITE_HTML) $(ARCHIVE) $(TAGS) $(CSS) $(IMAGES)
 
 $(SITE)/css/%: $(TEMPLATE)/css/%
 	@mkdir -p $(SITE)/css
