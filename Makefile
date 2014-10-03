@@ -1,6 +1,6 @@
 
 # Settings
-SITE     = /home/aparicio/aparicio.pt_site/mount/public_html/teste
+SITE     = /home/aparicio/aparicio.pt_site/mount/public_html/blog
 POSTS    = posts
 TEMPLATE = template
 TMP_HTML = tmp_html
@@ -10,7 +10,7 @@ INDEX_NPOSTS = 5
 # Extension for the hosted files.
 #  .html to work everywhere
 #  empty to have clean URLs with mod_rewrite or similar
-EXT = .html
+EXT =
 
 # Original files
 HEADER  = $(TEMPLATE)/header.html
@@ -23,7 +23,7 @@ POSTS_HTML = $(addprefix $(TMP_HTML)/, $(notdir $(CONTENT:%.markdown=%.html)))
 # Final generated files
 ARCHIVE   = $(SITE)/archive.html
 INDEX     = $(SITE)/index.html
-TAGS      = $(SITE)/tags
+TAGS      = $(SITE)/tags/index.html
 SITE_HTML = $(addprefix $(SITE)/posts/, $(notdir $(CONTENT:%.markdown=%.html)))
 CSS       = $(addprefix $(SITE)/css/, $(notdir $(wildcard $(TEMPLATE)/css/*.css)))
 IMAGES    = $(addprefix $(SITE)/images/, $(notdir $(wildcard $(TEMPLATE)/images/*)))

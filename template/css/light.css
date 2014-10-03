@@ -198,9 +198,9 @@ a.ext:hover {
 
 #content a:link, #content a:visited {
 	font-family: inherit;
-	margin: 1pt;
+	margin: 0pt;
 	font-size: inherit;
-	padding: 1pt;
+	padding: 0pt;
 	height: auto;
 	line-height: inherit;
 	width: auto;
@@ -211,9 +211,9 @@ a.ext:hover {
 
 #content a:hover, #content a:active {
 	font-family: inherit;
-	margin: 1pt;
+	margin: 0pt;
 	font-size: inherit;
-	padding: 1pt;
+	padding: 0pt;
 	height: auto;
 	line-height: inherit;
 	width: auto;
