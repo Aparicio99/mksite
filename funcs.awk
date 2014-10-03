@@ -28,9 +28,11 @@ function parse_post(filename, info) {
 		else if ($1 == "date:")
 			info["date"] = substr($0, 7)
 
-		else if ($1 == "tags:") {
+		else if ($1 == "draft:")
+			info["draft"] = 1
+
+		else if ($1 == "tags:")
 			patsplit(substr($0, 7), info["tags"], "([^, ]+[^,]+[^, ]+)")
-		}
 	}
 
 	info["body"] = read_file(filename)

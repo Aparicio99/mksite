@@ -13,6 +13,9 @@ $0 == "--- header ---" {
 
 	parse_post(FILENAME, post)
 
+	if (post["draft"])
+		next
+
 	url = strip_post_filename(FILENAME)
 	printf("<tt>%s</tt> - <a href=\"posts/%s\">%s</a><br/>\n", post["date"], url ENVIRON["EXT"], post["title"])
 }

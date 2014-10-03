@@ -6,6 +6,9 @@ $0 == "--- header ---" {
 
 	parse_post(FILENAME, post)
 
+	if (post["draft"])
+		next
+
 	for (i in post["tags"]) {
 		tag = post["tags"][i]
 		tags[tag] += 1
