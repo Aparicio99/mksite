@@ -12,34 +12,68 @@ function read_file(filename) {
 		else
 			file = $0
 	}
+	close(filename)
 	return file
 }
 
-function parse_post(filename, info) {
+function parse_post(filename, info,     i) {
 
 	delete info
 	info["tags"][0] = "untagged"
+	info["template"] = "default"
+	info["filename"] = filename
+	#sub(/^[^\/]+/, ENVIRON["PAGES_DIR"], info["filename"])
+	#print filename > "/dev/stderr"
+
+	FS=":"
 
 	while(getline < filename && $0 != "--- body ---") {
 
-		if ($1 == "title:")
-			info["title"] = substr($0, 8)
+		# Trim whitespace
+		sub(/[ \t]+$/, "", $2);
+		sub(/^[ \t]+/, "", $2);
 
-		else if ($1 == "date:")
-			info["date"] = substr($0, 7)
+		if ($1 == "tags")
+			patsplit($2, info["tags"], "([^, ]+[^,]+[^, ]+)")
+		else
+			info[$1] = $2
+	}
+	FS=" "
 
-		else if ($1 == "draft:")
-			info["draft"] = 1
-
-		else if ($1 == "tags:")
-			patsplit(substr($0, 7), info["tags"], "([^, ]+[^,]+[^, ]+)")
+	tags_string = ""
+	if (info["tags"][0] != "untagged") {
+		for (i in info["tags"]) {
+			tag = info["tags"][i]
+			if (!tag)
+				continue
+			if (i > 1)
+				tags_string = tags_string ", "
+			tags_string = tags_string sprintf("<a href=\"../tags/%s\">%s</a>", tag, tag)
+		}
 	}
 
+	info["tags_string"] = tags_string
 	info["body"] = read_file(filename)
 }
 
+function print_header_and_stop(filename) {
+	while (getline < filename) {
+		print
+		if ($0 == "--- body ---")
+			break
+	}
+}
+
 function strip_post_filename(file) {
-	sub("^.*\\/", "", file)
+	sub("^"ENVIRON["PAGES_DIR"]"/", "", file)
 	sub("\\..*$", "", file)
 	return file
+}
+
+function tags_url() {
+	if (ENVIRON["EXT"]) {
+		return "/tags/index.html"
+	} else {
+		return "/tags"
+	}
 }

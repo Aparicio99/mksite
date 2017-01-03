@@ -1,19 +1,13 @@
-/*
------------------------------------------------
-Wikka Default Stylesheet (print)
------------------------------------------------ */
-
-.header, .footer, .commentsheader, .copyright, .smallprint, .lastedit, .grabcode { display:none; }
+.header, .footer {
+	display:none;
+}
 
 body {
-	margin-top: 0px; 
-	margin-bottom: 0px; 
- 	margin-left: 0px;
-	margin-right: 0px;
+	margin-top: 0;
 }
 
 .page {
-	background-color: #FFFFFF;
-	padding: 0px;
+	background-color: #FFF;
+	padding: 0;
 	border: none;
 }

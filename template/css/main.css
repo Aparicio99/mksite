@@ -1,0 +1,342 @@
+/* global styling */
+
+p, li, td, th {
+	line-height: 1.5em;
+}
+
+/* page layout */
+
+/* margin/padding: top/bottom right/left */
+/* margin/padding: top right/left bottom */
+/* margin/padding: top right bottom left */
+
+body {
+	font: normal 0.9em Verdana, Arial, Helvetica, sans-serif;
+	color:#333;
+	text-align: left;
+	background: #efedef none repeat scroll 0 0;
+	margin: 0 10pt 0;
+}
+
+#page {
+	margin: 0 auto;
+	width: 890px;
+}
+
+#content {
+	border: 1px solid #DDD;
+	text-align: left;
+	background-color: #FFF;
+	padding: 30px;
+	clear: both;
+}
+
+/* Header */
+
+#header {
+	padding: 30px 30px 20px;
+}
+
+#header h1 {
+	font-size: 16pt;
+	margin: 0;
+}
+
+#header a {
+	color: #444;
+}
+
+/* Footer */
+
+#footer {
+	font-size: 0.7em;
+	color: #777;
+	letter-spacing: 0.1em;
+	padding: 0 30px 60px;
+	line-height: 2.0em;
+}
+
+#footer a {
+	color: #666;
+}
+
+#footer a:hover, #footer a:active {
+	color: #C60;
+}
+
+/***** HTML tags styling *****/
+
+/* Headers */
+
+h1, h2, h3, h4, h5, h6 {
+	color: #666;
+	margin: 1em 0 0;
+	padding: 0;
+}
+
+#content h1 {
+	font-size: 2.5em;
+	font-weight: normal;
+	margin-top: 0;
+}
+
+#content h2 {
+	font-size: 2.1em;
+	font-weight: normal;
+}
+
+#content h3 {
+	font-size: 1.6em;
+	font-weight: normal;
+}
+
+#content h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+#content h5 {
+	font-size: 1.1em;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+}
+
+#content h6 {
+	font-size: 1.0em;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+/* Links */
+
+a {
+	color: #20557B;
+	text-decoration: none;
+}
+
+#content a:link, #content a:visited {
+	color: #20557B;
+}
+
+#content a:hover, #content a:active {
+	color: #C60;
+}
+
+/* Lists */
+
+ul, ol {
+	padding: 0;
+	margin-left: 1.8em;
+}
+
+li, dt, dd {
+	line-height: 1.7em;
+}
+
+ul li {
+	list-style: outside none square;
+}
+
+ul.sitemap li:hover {
+	font-weight: bold;
+}
+
+/* Definition Lists */
+
+dt {
+	font-weight: bold;
+}
+
+dl.horizontal dt {
+	float: left;
+	overflow: hidden;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+dl.large dt { width: 160px; }
+dl.large dd { margin-left: 180px; }
+dl.small dt { width: 100px; }
+dl.small dd { margin-left: 120px; }
+
+/* Images */
+
+img {
+	border: 0px;
+}
+
+img.centre {
+	display: block;
+	text-align: center;
+	margin: 5px auto;
+}
+
+img.center {
+	display: block;
+	text-align: center;
+	margin: 5px auto;
+}
+
+img.left {
+	margin: 5px 10px 5px 0;
+	float: left;
+}
+
+img.right {
+	margin: 5px 0 0px 10px;
+	float: right;
+}
+
+img.icon {
+	border: 0px;
+	vertical-align: middle;
+}
+
+/* Other tags */
+
+abbr {
+	border-bottom: 1px dotted #333;
+	cursor: help;
+	color: #333;
+}
+
+blockquote {
+	width: 500px;
+	margin-bottom: 0px;
+}
+
+hr {
+	border: none 0;
+	border-top: 1px solid #999;
+}
+
+
+pre {
+	padding: 0.5em;
+	/*-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;*/
+}
+
+code {
+	font-family: Consolas, monospace;
+	font-size: 0.85em;
+	line-height: 1em;
+	border: 1px solid #DDD;
+	padding: 1px 4px;
+	letter-spacing: 0.1em;
+}
+
+kbd {
+	font-family: Consolas, monospace;
+	font-size: 0.85em;
+	border: 1px solid #aaa;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
+}
+
+/***** Content classes ******/
+
+.cool {
+	font-family: monospace;
+	color: #666;
+	line-height: 20px;
+}
+
+.cool .string {
+	color: #1d9e0d;
+}
+
+.floatl {
+	float: left;
+	font-size: 90%;
+	line-height: 1.5em;
+	padding: 5px;
+	width: 48%;
+	margin-right: 3%;
+	border: 1px dotted #CCC;
+}
+
+.floatr {
+	float: right;
+	font-size: 90%;
+	line-height: 1.5em;
+	padding: 5px;
+	width: 48%;
+	margin-left: 3%;
+	border: 1px dotted #CCC;
+}
+
+.left {float:left;}
+
+.right {float:right;}
+
+.clear {clear:both;}
+
+.underline {text-decoration: underline;}
+
+.centre {text-align: center;}
+
+.center, .center p {text-align: center;}
+
+.smaller {font-size: smaller;}
+
+.red {color: red;}
+.green {color: green;}
+.blue {color: blue;}
+.orange {color: darkorange;}
+
+
+/***** Tables *****/
+
+table.data {
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table.data caption {
+	border: 1px solid #CCC;
+	font-size: 95%;
+	color: #666;
+	margin:5px 0;
+	padding:2px;
+	font-weight: bold;
+}
+
+table.data thead, table.data tfoot {
+	background-color: #DDD;
+}
+
+table.data th {
+	border: 1px solid #CCC;
+	padding: .1em .25em;
+}
+
+table.data tbody tr {
+	background-color: #EEE;
+}
+
+table.data tbody tr:hover {
+	background-color: #DDD;
+}
+
+table.data td {
+	border: 1px solid #CCC;
+	padding: .1em .25em;
+}
+
+table.data td.number {
+	text-align: right;
+}
+
+table.full {
+	width: 100%;
+}
+
+table.mono {
+	font-family: monospace;
+	font-size: 1.2em;
+}

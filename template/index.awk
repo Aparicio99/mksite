@@ -1,3 +1,10 @@
+# This template generates 
+
+BEGIN {
+	hook_pre_content["index"] = "default_hook_pre_content"
+	hook_pos_content["index"] = "index_hook_pos_content"
+}
+
 @load "filefuncs"
 
 function generate_entry(path) {
@@ -59,22 +66,21 @@ function traverse(data, level) {
 				traverse(data[i], level + 1)
 				print "</ul>"
 
-			# File - Ignore hidden and index files
-			} else if (i !~ /^\./ && i !~ /^index\..*/) {
+			# File
+			} else if (i != "." && i !~ /^index\..*/) {
 				generate_entry(data[i]["path"])
 			}
 		}
 	}
 }
 
-function generate_index(filename,      dir, path, result) {
+function index_hook_pos_content(      dir, path, result) {
 
-	dir = filename
+	dir = post["filename"]
 	# Remove file from path
 	sub(/\/[^\/]+$/, "", dir)
 
 	path[0] = dir
 	result = fts(path, FTS_LOGICAL, filedata)
-	print "<p><strong>Pages</strong><span class=\"right\"><strong>Tags</strong></span></p>"
 	traverse(filedata, 0)
 }
