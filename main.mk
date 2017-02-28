@@ -64,7 +64,6 @@ $(SITE)/files/%: $(FILES_DIR)/%
 	@cp --force --link $< $@ || cp $< $@
 
 $(SITE)/%.html: $(TMP_HTML)/%.html $(TEMPLATE_FILES)
-	@mkdir -p $(SITE)/pages
 	@mkdir -p "$(@D)"
 	@echo "$(GREEN)[Generate page] $(CYAN)$@$(NORMAL)"
 	@./generate_page.awk $< | m4 > $@
