@@ -31,10 +31,12 @@ BEGIN {
 	# at least one markdown generated code block, to speed
 	# up the regenerating of all pages
 
-	if (match(content, "<pre><code"))
+	if (match(content, "<pre><code")) {
 		print content | "./code_highlight.py"
-	else
+		define("CODE_CSS", 1)
+	} else {
 		print content
+	}
 
 	hook_pos = hook_pos_content[template]
 	@hook_pos()
