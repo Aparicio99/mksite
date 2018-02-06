@@ -1,10 +1,24 @@
-# Settings
-export SITE      = site
-export CONTENT   = content
+### Default directories
+
+# Place for the final generated site files
+export SITE = site
+
+# The content to generate the site
+export CONTENT = content
+
+# Source to generate the HTML pages
 export PAGES_DIR = $(CONTENT)/pages
+
+# Static files to copy unmodified
 export FILES_DIR = $(CONTENT)/files
-export TEMPLATE  = template
-export TMP_HTML  = tmp_html
+
+# The template to style the pages
+export TEMPLATE = template
+
+# Where to save temporary files
+export TMP_HTML = tmp_html
+
+### Other defaults
 export MARKDOWN_PARSER = cmark
 export INDEX_NPOSTS = 5
 
@@ -13,11 +27,13 @@ export INDEX_NPOSTS = 5
 #  empty to have clean URLs with mod_rewrite or similar
 export EXT = .html
 
+# Replace the defaults above inside this file
 -include config.mk
 
 all:
 	@echo "Generating content"
 	@$(MAKE) -s -C content
+
 	@echo "Generating site"
 	@$(MAKE) -s -f main.mk
 
