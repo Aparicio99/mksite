@@ -22,8 +22,7 @@ BEGIN {
 	define("EXT", ENVIRON["EXT"])
 	define("BASE_URL", ENVIRON["BASE_URL"])
 
-	while (getline < "macros.m4")
-		print
+	print read_file("macros.m4")
 
 	print read_file("template/header.html")
 
