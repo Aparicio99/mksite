@@ -8,19 +8,10 @@ function generate_entry(path) {
 
 	url = strip_post_filename(path)
 
-	if (ENVIRON["EXT"]) {
-		printf("        <li>\n")
-		printf("          <a href='/%s'>%s</a>\n", url ENVIRON["EXT"], post["title"])
-		printf("          <span class='right smaller'>%s</span>\n", post["tags_string"])
-		printf("        </li>\n")
-	} else {
-		sub("(^|/)index.*$", "", url)
-		printf("        <li>\n")
-		printf("          <a href='/%s'>%s</a>\n", url, post["title"])
-		printf("          <span class='right smaller'>%s</span>\n", post["tags_string"])
-		printf("        </li>\n")
-	}
-
+	printf("        <li>\n")
+	printf("          <a href='LINK(%s)'>%s</a>\n", url, post["title"])
+	printf("          <span class='right smaller'>%s</span>\n", post["tags_string"])
+	printf("        </li>\n")
 }
 
 # TODO: Melhorar a identação do HTML gerado

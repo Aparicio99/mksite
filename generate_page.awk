@@ -20,7 +20,10 @@ BEGIN {
 	define("TITLE", title)
 	define("TEMPLATE", template)
 	define("EXT", ENVIRON["EXT"])
-	define("TAGS_URL", tags_url())
+	define("BASE_URL", ENVIRON["BASE_URL"])
+
+	while (getline < "macros.m4")
+		print
 
 	print read_file("template/header.html")
 

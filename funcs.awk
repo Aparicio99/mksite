@@ -69,11 +69,3 @@ function strip_post_filename(file) {
 	sub("\\..*$", "", file)
 	return file
 }
-
-function tags_url() {
-	if (ENVIRON["EXT"]) {
-		return "/tags/index.html"
-	} else {
-		return "/tags"
-	}
-}

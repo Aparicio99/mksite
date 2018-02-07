@@ -9,7 +9,7 @@ function default_hook_pre_content() {
 	else
 		left_footer = ""
 
-	custom_link = "<a href=\"/\">home</a> |"
+	custom_link = "<a href=\"__HOMEPAGE__\">home</a> |"
 
 	define("LEFT_FOOTER", left_footer)
 	define("CUSTOM_LINK", custom_link)

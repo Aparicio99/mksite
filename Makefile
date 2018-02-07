@@ -20,12 +20,12 @@ export TMP_HTML = tmp_html
 
 ### Other defaults
 export MARKDOWN_PARSER = cmark
-export INDEX_NPOSTS = 5
 
 # Extension for the hosted files.
 #  .html to work everywhere
 #  empty to have clean URLs with mod_rewrite or similar
 export EXT = .html
+export BASE_URL =
 
 # Replace the defaults above inside this file
 -include config.mk

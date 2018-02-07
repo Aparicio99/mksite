@@ -4,7 +4,7 @@
 #  - No guarantees for corner cases.
 #  - Not 100% optimal, but close enough
 #  - mix option gives super-optimal compression by factoring equal blocks,
-#    but this messues up the original order, and should only be used in stuff
+#    but this messes up the original order, and should only be used in stuff
 #    like syntax highlighting styles
 
 BEGIN {
