@@ -4,7 +4,7 @@
 export SITE = site
 
 # The content to generate the site
-export CONTENT = content
+export CONTENT = example-content
 
 # Source to generate the HTML pages
 export PAGES_DIR = $(CONTENT)/pages
@@ -20,6 +20,8 @@ export TMP_HTML = tmp_html
 
 ### Other defaults
 export MARKDOWN_PARSER = cmark
+export SITE_NAME = Yet another site
+export SITE_DESCRIPTION = Some description here
 
 # Extension for the hosted files.
 #  .html to work everywhere
@@ -32,11 +34,11 @@ export BASE_URL =
 
 all:
 	@echo "Generating content"
-	@$(MAKE) -s -C content
+	@$(MAKE) -s -C $(CONTENT)
 
 	@echo "Generating site"
 	@$(MAKE) -s -f main.mk
 
 clean:
-	@$(MAKE) -s -C content clean
+	@$(MAKE) -s -C $(CONTENT) clean
 	@$(MAKE) -s -f main.mk clean

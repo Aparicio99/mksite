@@ -19,6 +19,8 @@ BEGIN {
 
 	define("TITLE", title)
 	define("TEMPLATE", template)
+	define("SITE_NAME", ENVIRON["SITE_NAME"])
+	define("SITE_DESCRIPTION", ENVIRON["SITE_DESCRIPTION"])
 	define("EXT", ENVIRON["EXT"])
 	define("BASE_URL", ENVIRON["BASE_URL"])
 
