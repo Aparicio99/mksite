@@ -2,6 +2,9 @@
 
 Static site generator for creating simple sites with common Unix tools.
 
+I created and develop it over time to mantain my [personal website](https://aparicio.pt),
+not because there is no other tool with the same capabilities, but just for the sake of it.
+
 ## Features
 
   * Fully use Make dependency system
@@ -15,7 +18,9 @@ Static site generator for creating simple sites with common Unix tools.
   * Generates page with the complete site map
   * Includes CSS minifier
   * Syntax highlighting for code blocks
-  * Runs Make on the content directory to generate dynamic pages
+  * Runs Make on the content directory to generate pages with dynamic content
+    (like generating graphs with gnuplot from raw data)
+  * Default template produces very lightweight pages with no Javascript (my [homepage](https://aparicio.pt) is 5.34 KB)
 
 
 ## Dependencies
@@ -52,7 +57,7 @@ $ make
 $ $BROWSER site/index.html
 ```
 
-For a more personalized site hosted on a web server, override the other defaults on `config.mk`.
+For a more personalized site hosted on a web server, override the other defaults on the file `config.mk`.
 
 Example for a site to be served from `/var/www/webroot`, on the domain root, and with pretty
 URLs without the `.html` extension:
