@@ -37,8 +37,6 @@ all: $(CSS) $(INDEX) $(SITE_HTML) $(IMAGES) $(FILES3)
 watch:
 	inotifywait -rm . | awk '/MODIFY/{system("sleep 0.1 && make")}'
 
-#tags: $(TAGS)
-
 # Sitemap needs to depend on all pages, to be updated
 # every time one page change or is added
 $(TMP_HTML)/sitemap.html: $(ALL_ORIGINAL)
