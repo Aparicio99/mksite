@@ -33,10 +33,10 @@ export BASE_URL =
 -include config.mk
 
 all:
-	@echo "Generating content"
+	@echo "Generating content" >/dev/null
 	@$(MAKE) -s -C $(CONTENT)
 
-	@echo "Generating site"
+	@echo "Generating site" >/dev/null
 	@$(MAKE) -s -f main.mk
 
 clean:
