@@ -3,7 +3,10 @@
 Static site generator for creating simple sites with common Unix tools.
 
 I created and develop it over time to mantain my [personal website](https://aparicio.pt),
-not because there is no other tool with the same capabilities, but just for the sake of it.
+not because there is no other tool with the same capabilities, but just for the sake of it,
+and to have something that does exactly and only what I need.
+
+It's complex but generates simple HTML.
 
 ## Features
 
@@ -21,7 +24,6 @@ not because there is no other tool with the same capabilities, but just for the 
   * Runs Make on the content directory to generate pages with dynamic content
     (like generating graphs with gnuplot from raw data)
   * Default template produces very lightweight pages with no Javascript (my [homepage](https://aparicio.pt) is 5.34 KB)
-
 
 ## Dependencies
 
@@ -69,6 +71,11 @@ SITE_NAME = Your site name
 SITE_DESCRIPTION = Your description
 EXT =
 BASE_URL =
+```
+
+To also generate a dark themed version of the site, also set:
+```make
+SITE_DARK = /var/www/webroot/dark
 ```
 
 And put this on the Nginx configuration server section:

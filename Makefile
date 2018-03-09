@@ -3,6 +3,10 @@
 # Place for the final generated site files
 export SITE = site
 
+# Place for a dark theme version of the site
+# Must be set in the config file to be generated
+export SITE_DARK =
+
 # The content to generate the site
 export CONTENT = example-content
 
@@ -27,18 +31,45 @@ export SITE_DESCRIPTION = Some description here
 #  .html to work everywhere
 #  empty to have clean URLs with mod_rewrite or similar
 export EXT = .html
+
 export BASE_URL =
+export BASE_URL_DARK = dark
+
+export THEME = light
+export OTHER_THEME = dark
+export OTHER_THEME_URL = $(BASE_URL_DARK)
 
 # Replace the defaults above inside this file
 -include config.mk
 
-all:
-	@echo "Generating content"
-	@$(MAKE) -s -C $(CONTENT)
+.PHONY: all content light dark
 
-	@echo "Generating site"
-	@$(MAKE) -s -f main.mk
+.SILENT: # Do not print the commands
+
+all: light dark
+
+light: content
+	echo "Generating site (light theme)"
+	$(MAKE) -s -f main.mk
+
+ifneq ($(SITE_DARK),)
+dark: content
+	echo "Generating site (dark theme)"
+	$(MAKE) -s -f main.mk \
+		SITE=$(SITE_DARK) \
+		BASE_URL=$(BASE_URL_DARK) \
+		THEME=dark \
+		OTHER_THEME=light \
+		OTHER_THEME_URL=$(BASE_URL)
+endif
+
+content:
+	echo "Generating content"
+	$(MAKE) -s -C $(CONTENT)
 
 clean:
-	@$(MAKE) -s -C $(CONTENT) clean
-	@$(MAKE) -s -f main.mk clean
+	$(MAKE) -s -C $(CONTENT) clean
+	$(MAKE) -s -f main.mk clean
+ifneq ($(SITE_DARK),)
+	$(MAKE) -s -f main.mk clean SITE=$(SITE_DARK)
+endif

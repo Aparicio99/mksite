@@ -1,5 +1,5 @@
 .highlight { background-color: #1B1D1E; color: #FFF; }
-.c { color: #465457;} /* Comment */
+.c { color: #5B6D71;} /* Comment */
 .err { color: #F8F8F2;} /* Error */
 .esc { color: #F8F8F2;} /* Escape */
 .g { color: #F8F8F2;} /* Generic */
@@ -9,10 +9,10 @@
 .o { color: #F8F8F2;} /* Operator */
 .x { color: #F8F8F2;} /* Other */
 .p { color: #F8F8F2;} /* Punctuation */
-.cm { color: #465457;} /* Comment.Multiline */
+.cm { color: #5B6D71;} /* Comment.Multiline */
 .cp { color: #A6E22E;} /* Comment.Preproc */
-.c1 { color: #465457;} /* Comment.Single */
-.cs { color: #465457;} /* Comment.Special */
+.c1 { color: #5B6D71;} /* Comment.Single */
+.cs { color: #5B6D71;} /* Comment.Special */
 .gd { color: #960050; background-color: #1E0010 } /* Generic.Deleted */
 .ge { color: #808080; text-decoration: underline;} /* Generic.Emph */
 .gr { color: #960050; background-color: #1E0010 } /* Generic.Error */

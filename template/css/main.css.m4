@@ -12,9 +12,9 @@ p, li, td, th {
 
 body {
 	font: normal 0.9em Verdana, Arial, Helvetica, sans-serif;
-	color:#333;
+	color: TEXT;
 	text-align: left;
-	background: #efedef none repeat scroll 0 0;
+	background: BG none repeat scroll 0 0;
 	margin: 0 10pt 0;
 }
 
@@ -24,9 +24,9 @@ body {
 }
 
 #content {
-	border: 1px solid #DDD;
+	border: 1px solid CONTENT_BORDER;
 	text-align: left;
-	background-color: #FFF;
+	background-color: CONTENT_BG;
 	padding: 30px;
 	clear: both;
 }
@@ -43,25 +43,25 @@ body {
 }
 
 #header a {
-	color: #444;
+	color: PAGE_TITLE;
 }
 
 /* Footer */
 
 #footer {
 	font-size: 0.7em;
-	color: #777;
+	color: FOOTER_FG;
 	letter-spacing: 0.1em;
 	padding: 0 30px 60px;
 	line-height: 2.0em;
 }
 
 #footer a {
-	color: #666;
+	color: FOOTER_LINK;
 }
 
 #footer a:hover, #footer a:active {
-	color: #C60;
+	color: LINK_HOVER;
 }
 
 /***** HTML tags styling *****/
@@ -69,7 +69,7 @@ body {
 /* Headers */
 
 h1, h2, h3, h4, h5, h6 {
-	color: #666;
+	color: HEADER;
 	margin: 1em 0 0;
 	padding: 0;
 }
@@ -111,16 +111,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Links */
 
 a {
-	color: #20557B;
+	color: LINK;
 	text-decoration: none;
 }
 
 #content a:link, #content a:visited {
-	color: #20557B;
+	color: LINK;
 }
 
 #content a:hover, #content a:active {
-	color: #C60;
+	color: LINK_HOVER;
 }
 
 /* Lists */
@@ -197,42 +197,46 @@ img.icon {
 /* Other tags */
 
 abbr {
-	border-bottom: 1px dotted #333;
+	border-bottom: 1px dotted TEXT;
 	cursor: help;
-	color: #333;
+	color: TEXT;
 }
 
 blockquote {
-	width: 500px;
-	margin-bottom: 0px;
+	width: 75%;
+	padding: 0 .5em;
+	margin-left: 2em;
+	border-left: 6px solid TABLE_BORDER;
 }
 
 hr {
 	border: none 0;
-	border-top: 1px solid #999;
+	border-top: 1px solid HEADER;
 }
 
 
 pre {
-	padding: 0.5em;
+	padding: 1em;
+	font-size: 1.2em;
 	/*-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;*/
 }
 
 code {
+	background-color: CODE_BG;
+	color: CODE_TEXT;
 	font-family: Consolas, monospace;
 	font-size: 0.85em;
 	line-height: 1em;
-	border: 1px solid #DDD;
-	padding: 1px 4px;
+	padding: .2em .5em;
 	letter-spacing: 0.1em;
 }
 
 kbd {
 	font-family: Consolas, monospace;
 	font-size: 0.85em;
-	border: 1px solid #aaa;
+	border: 1px solid KBD_BORDER;
 	padding: 0.1em 0.3em;
 	border-radius: 0.2em;
 }
@@ -241,12 +245,12 @@ kbd {
 
 .cool {
 	font-family: monospace;
-	color: #666;
+	color: COOL;
 	line-height: 20px;
 }
 
 .cool .string {
-	color: #1d9e0d;
+	color: COOLS;
 }
 
 .floatl {
@@ -256,7 +260,7 @@ kbd {
 	padding: 5px;
 	width: 48%;
 	margin-right: 3%;
-	border: 1px dotted #CCC;
+	border: 1px dotted TABLE_BORDER;
 }
 
 .floatr {
@@ -266,7 +270,7 @@ kbd {
 	padding: 5px;
 	width: 48%;
 	margin-left: 3%;
-	border: 1px dotted #CCC;
+	border: 1px dotted TABLE_BORDER;
 }
 
 .left {float:left;}
@@ -292,39 +296,39 @@ kbd {
 /***** Tables *****/
 
 table.data {
-	border: 1px solid #CCC;
+	border: 1px solid TABLE_BORDER;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 table.data caption {
-	border: 1px solid #CCC;
+	border: 1px solid TABLE_BORDER;
 	font-size: 95%;
-	color: #666;
+	color: HEADER;
 	margin:5px 0;
 	padding:2px;
 	font-weight: bold;
 }
 
 table.data thead, table.data tfoot {
-	background-color: #DDD;
+	background-color: THEAD_BG;
 }
 
 table.data th {
-	border: 1px solid #CCC;
+	border: 1px solid TABLE_BORDER;
 	padding: .1em .25em;
 }
 
 table.data tbody tr {
-	background-color: #EEE;
+	background-color: TR_BG;
 }
 
 table.data tbody tr:hover {
-	background-color: #DDD;
+	background-color: TR_HOVER_BG;
 }
 
 table.data td {
-	border: 1px solid #CCC;
+	border: 1px solid TABLE_BORDER;
 	padding: .1em .25em;
 }
 

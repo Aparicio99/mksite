@@ -12,7 +12,7 @@ function default_hook_pre_content() {
 	custom_link = "<a href=\"__HOMEPAGE__\">home</a> |"
 
 	define("LEFT_FOOTER", left_footer)
-	define("CUSTOM_LINK", custom_link)
+	define("CUSTOM_LINKS", custom_link)
 
 	printf("<h1>%s</h1>\n", post["title"])
 }

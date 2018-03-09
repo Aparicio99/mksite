@@ -16,13 +16,20 @@ BEGIN {
 	title    = post["title"]
 	template = post["template"]
 	content  = post["body"]
+	path     = post["path"]
 
 	define("TITLE", title)
 	define("TEMPLATE", template)
+	define("REL_PATH", path)
 	define("SITE_NAME", ENVIRON["SITE_NAME"])
 	define("SITE_DESCRIPTION", ENVIRON["SITE_DESCRIPTION"])
 	define("EXT", ENVIRON["EXT"])
 	define("BASE_URL", ENVIRON["BASE_URL"])
+
+	if (ENVIRON["SITE_DARK"] != "") {
+		define("OTHER_THEME", ENVIRON["OTHER_THEME"])
+		define("OTHER_THEME_URL", ENVIRON["OTHER_THEME_URL"])
+	}
 
 	print read_file("macros.m4")
 

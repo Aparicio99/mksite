@@ -22,8 +22,7 @@ function parse_post(filename, info,     i) {
 	info["tags"][0] = "untagged"
 	info["template"] = "default"
 	info["filename"] = filename
-	#sub(/^[^\/]+/, ENVIRON["PAGES_DIR"], info["filename"])
-	#print filename > "/dev/stderr"
+	info["path"] = strip_post_filename(filename)
 
 	FS=":"
 
@@ -66,6 +65,7 @@ function print_header_and_stop(filename) {
 
 function strip_post_filename(file) {
 	sub("^"ENVIRON["PAGES_DIR"]"/", "", file)
+	sub("^"ENVIRON["TMP_HTML"]"/", "", file)
 	sub("\\..*$", "", file)
 	return file
 }
