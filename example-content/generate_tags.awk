@@ -26,7 +26,7 @@ $0 == "--- header ---" {
 		sub("^pages", "", url)
 		sub("\\..*$", "", url)
 		sub("^/", "", url)
-		posts[tag][FILENAME] = sprintf("<li><a href=\"LINK(%s)\">%s</a></li>",
+		posts[tag][FILENAME] = sprintf("<li><a href=\"PAGE(%s)\">%s</a></li>",
 				url, post["title"])
 	}
 }
@@ -39,7 +39,7 @@ END {
 
 	PROCINFO["sorted_in"] = "@val_num_desc"
 	for (tag in tags)
-		printf("<li><a href=\"RELLINK(%s)\">%s (%d)</a></li>\n", tag, tag, tags[tag]) > out
+		printf("<li><a href=\"LINK(%s)\">%s (%d)</a></li>\n", tag, tag, tags[tag]) > out
 
 	print "</ul>" > out
 
