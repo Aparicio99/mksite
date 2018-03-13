@@ -23,6 +23,8 @@ grow somewhat complex to accomodate all the configurability and features current
   * Generates page with the complete site map
   * Includes CSS minifier
   * Syntax highlighting for code blocks
+  * Macros to abstract the path and file extensions in links to other pages
+  * Support for generating an alternate (dark) theme site alongside
   * Runs Make on the content directory to generate pages with dynamic content
     (like generating tags listings, and graphs with gnuplot from raw data)
   * Default template produces very lightweight pages with no Javascript (my [homepage](https://aparicio.pt) is 5.34 KB)
@@ -78,6 +80,7 @@ BASE_URL =
 To also generate a alternate dark themed version of the site, set:
 ```make
 SITE_DARK = /var/www/webroot/dark
+BASE_URL = /dark
 ```
 
 And put this on the Nginx configuration server section:
