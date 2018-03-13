@@ -6,7 +6,8 @@ I created and develop it over time to mantain my [personal website](https://apar
 not because there is no other tool with the same capabilities, but just for the sake of it,
 and to have something that does exactly and only what I need.
 
-It's complex but generates simple HTML.
+Altought the purpose is to generate simple HTML pages, the structure of the generator has
+grow somewhat complex to accomodate all the configurability and features currently suported.
 
 ## Features
 
@@ -18,11 +19,12 @@ It's complex but generates simple HTML.
     * `.md` -> Uses a markdown processor
     * `.sh/.awk/.py` -> Uses the script output
     * `.index` -> Generates a site map from the current directory
+    * Easly extensible for other types of files
   * Generates page with the complete site map
   * Includes CSS minifier
   * Syntax highlighting for code blocks
   * Runs Make on the content directory to generate pages with dynamic content
-    (like generating graphs with gnuplot from raw data)
+    (like generating tags listings, and graphs with gnuplot from raw data)
   * Default template produces very lightweight pages with no Javascript (my [homepage](https://aparicio.pt) is 5.34 KB)
 
 ## Dependencies
@@ -30,11 +32,11 @@ It's complex but generates simple HTML.
 The core dependencies are the following:
 
   * GNU **Make**
-    * Coordinates everything
+    * Entry point to call the other scripts
   * GNU **Awk**
-    * Parsing and file generation
+    * Parsing and template file generation
   * GNU **m4**
-    * Macros for text replacement
+    * Macros for simple text replacement like internal URLs
 
 This may work with Make or m4 other than the GNU ones, but was only tested with those.
 Awk must really be Gawk since the scripts use Gawk specific extensions.
@@ -73,7 +75,7 @@ EXT =
 BASE_URL =
 ```
 
-To also generate a dark themed version of the site, also set:
+To also generate a alternate dark themed version of the site, set:
 ```make
 SITE_DARK = /var/www/webroot/dark
 ```
@@ -86,4 +88,9 @@ try_files $uri $uri.html $uri/ =404;
 error_page 404 /404.html;
 error_page 403 /403.html;
 
+```
+
+To use an alternative code syntax highlighting colors, run:
+```
+pygmentize -S <theme name> -f html -a .highlight > template/css/code.css
 ```
