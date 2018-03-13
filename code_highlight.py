@@ -5,7 +5,7 @@ from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
 
-formatter = HtmlFormatter(linenos=False, style="molokai")
+formatter = HtmlFormatter(linenos=False)
 
 #from pygments.styles import get_style_by_name
 #print(formatter.get_style_defs())

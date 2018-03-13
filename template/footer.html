@@ -4,10 +4,10 @@
       ifdef(`__LEFT_FOOTER__', `<div class="left">__LEFT_FOOTER__</div>')
       <div class="right">
         ifdef(`__CUSTOM_LINKS__', `__CUSTOM_LINKS__')
-        ifdef(`__OTHER_THEME__', `<a href="OTHER_THEME_LINK(__REL_PATH__)">__OTHER_THEME__</a> |')
-        <a href="LINK(sitemap)">sitemap</a> |
-        <a href="INDEX(tags)">tags</a> |
-        <a href="LINK(whoami)">about</a> |
+        ifdef(`__OTHER_THEME__', `<a href="ALTERNATE_PAGE(__REL_PATH__)">__OTHER_THEME__</a> |')
+        <a href="PAGE(sitemap)">sitemap</a> |
+        <a href="PAGE(tags/index)">tags</a> |
+        <a href="PAGE(whoami)">about</a> |
         <a href="https://github.com/Aparicio99/mksite">generated with mksite</a>
       </div>
     </div>

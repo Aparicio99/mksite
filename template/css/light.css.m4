@@ -11,8 +11,8 @@ define(HEADER, `#666')
 define(LINK, `#20557B')
 define(LINK_HOVER, `#C60')
 
-define(CODE_BG, `#1B1D1E')
-define(CODE_TEXT, `#FFF')
+define(CODE_BG, `BG')
+define(CODE_TEXT, `TEXT')
 
 define(KBD_BORDER, `#AAA')
 

@@ -1,5 +1,5 @@
 define(BG, `#1B1D1E')
-define(TEXT, `#EEE')
+define(TEXT, `#DDD')
 
 define(PAGE_TITLE, `#CCC')
 
@@ -16,10 +16,10 @@ define(CODE_TEXT, `#FFF')
 
 define(KBD_BORDER, `#AAA')
 
-define(THEAD_BG, `#DDD')
+define(THEAD_BG, `#555')
 define(TR_BG, `BG')
 define(TR_HOVER_BG, `THEAD_BG')
-define(TABLE_BORDER, `#CCC')
+define(TABLE_BORDER, `#777')
 
 define(FOOTER_FG, `#777')
 define(FOOTER_LINK, `#999')

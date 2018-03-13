@@ -243,13 +243,14 @@ kbd {
 
 /***** Content classes ******/
 
-.cool {
+pre.cool {
 	font-family: monospace;
 	color: COOL;
 	line-height: 20px;
+	padding: 0;
 }
 
-.cool .string {
+pre.cool .string {
 	color: COOLS;
 }
 
@@ -271,6 +272,11 @@ kbd {
 	width: 48%;
 	margin-left: 3%;
 	border: 1px dotted TABLE_BORDER;
+}
+
+.coolf {
+	float: right;
+	width: 48%;
 }
 
 .left {float:left;}
