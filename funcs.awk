@@ -47,7 +47,7 @@ function parse_post(filename, info,     i) {
 				continue
 			if (i > 1)
 				tags_string = tags_string ", "
-			tags_string = tags_string sprintf("<a href=\"../tags/%s\">%s</a>", tag, tag)
+			tags_string = tags_string sprintf("<a href=\"LINK(tags/%s)\">%s</a>", tag, tag)
 		}
 	}
 
