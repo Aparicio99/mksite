@@ -68,8 +68,11 @@ content:
 	$(MAKE) -s -C $(CONTENT)
 
 clean:
-	$(MAKE) -s -C $(CONTENT) clean
-	$(MAKE) -s -f main.mk clean
+	$(MAKE) -s -C $(CONTENT) $@
+	$(MAKE) -s -f main.mk $@
 ifneq ($(SITE_DARK),)
-	$(MAKE) -s -f main.mk clean SITE=$(SITE_DARK)
+	$(MAKE) -s -f main.mk $@ SITE=$(SITE_DARK)
 endif
+
+check_urls:
+	$(MAKE) -s -f main.mk $@

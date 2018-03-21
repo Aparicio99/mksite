@@ -82,3 +82,6 @@ clean:
 
 watch:
 	inotifywait -rm . | awk '/MODIFY/{system("sleep 0.1 && make")}'
+
+check_urls: $(ALL_ORIGINAL)
+	./dead_link_checker.awk $^
