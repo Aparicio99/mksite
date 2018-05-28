@@ -9,7 +9,7 @@ function generate_entry(path) {
 	url = strip_post_filename(path)
 
 	printf("        <li>\n")
-	printf("          <a href='LINK(%s)'>%s</a>\n", url, post["title"])
+	printf("          <a href='PAGE(%s)'>%s</a>\n", url, post["title"])
 	printf("          <span class='right smaller'>%s</span>\n", post["tags_string"])
 	printf("        </li>\n")
 }
