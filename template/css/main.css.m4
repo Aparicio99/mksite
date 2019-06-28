@@ -38,7 +38,7 @@ body {
 }
 
 #header h1 {
-	font-size: 16pt;
+	font-size: 1.4em;
 	margin: 0;
 }
 
@@ -52,7 +52,7 @@ body {
 	font-size: 0.7em;
 	color: FOOTER_FG;
 	letter-spacing: 0.1em;
-	padding: 0 30px 60px;
+	padding: 0 3em;
 	line-height: 2.0em;
 }
 
@@ -349,4 +349,28 @@ table.full {
 table.mono {
 	font-family: monospace;
 	font-size: 1.2em;
+}
+
+@media only screen and (max-width: 910px) {
+	body {
+		margin: 0;
+		font: normal 0.8em Verdana, Arial, Helvetica, sans-serif;
+	}
+	#page {
+		margin: 0 auto;
+		width: 100%;
+	}
+	#content {
+		border-left: 0;
+		border-right: 0;
+		padding: 1em;
+	}
+	#footer {
+		padding: 0 1em;
+	}
+	pre {
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		text-align: justify;
+	}
 }
